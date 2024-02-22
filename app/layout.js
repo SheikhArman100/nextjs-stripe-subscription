@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <ul className=" flex items-center justify-center mt-4 gap-x-8">
               <li>
-                <Link href="/public">Public</Link>
+                <Link href="/pricing">Pricing</Link>
               </li>
               <li>
                 <Link href="/client">Client</Link>

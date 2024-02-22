@@ -4,6 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation.js";
 import { Button } from "./ui/button.jsx";
+import { config } from "@/middleware.js";
 
 const LogoutButton = () => {
   const router = useRouter();
@@ -16,7 +17,8 @@ const LogoutButton = () => {
       exact: true,
     });
     await supabase.auth.signOut();
-    router.replace(`/auth/signin?next=${pathname}`);
+    //router.replace(`/auth/signin?next=${pathname}`);
+    
     router.refresh();
     
 

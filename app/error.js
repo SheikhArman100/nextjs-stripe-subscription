@@ -1,17 +1,17 @@
 "use client";
 
-export default function Error({  reset }) {
+export default function Error({error, reset }) {
   return (
     <div className="grid h-screen px-4  place-content-center">
       <div className="text-center">
-        <h1 className="font-black text-gray-200 text-9xl">401</h1>
+        <h1 className="font-black text-gray-200 text-9xl">Error</h1>
 
         <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Unauthroized!
+          {error?null:"Unauthorized !"}
         </p>
 
         <p className="mt-4 text-gray-500">
-             You must be logged in to access the page
+            {error.message||"You must be logged in to access the page"} 
         </p>
 
         <button

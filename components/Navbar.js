@@ -5,9 +5,12 @@ import ThemeButton from "./ThemeButton.js";
 import UserAvatar from "./UserAvatar.js";
 import { Button } from "./ui/button.jsx";
 import { Skeleton } from "./ui/skeleton.jsx";
+import { usePathname } from "next/navigation.js";
 
 const Navbar = () => {
   const { data, isPending } = UseUserInfo();
+ const pathname=usePathname()
+
 
   return (
     <div className="w-full h-16  border-b border-b-border flex  items-center justify-between px-8 lg:px-[2rem] xl:px-[4rem]">
@@ -22,7 +25,7 @@ const Navbar = () => {
           <UserAvatar user={data} />
         ) : (
           <Button asChild>
-            <Link href="/auth/signin" className="">
+            <Link href={`/auth/signin?next=${pathname}`} className="">
               Sign in
             </Link>
           </Button>
